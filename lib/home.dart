@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_course_app/local_data/sqil/database_helper.dart';
 import 'package:flutter_course_app/my_profile.dart';
 
 class Home extends StatefulWidget {
@@ -9,6 +10,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final dbHelper = DatabaseHelper.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -16,16 +16,16 @@ class _BlogDetailState extends State<BlogDetail> with SingleTickerProviderStateM
   @override
   void initState() {
     super.initState();
-    animationController = AnimationController(vsync: this, duration: Duration(seconds: 5));
+    animationController = AnimationController(vsync: this, duration: const Duration(seconds: 5));
 
     imageAnimation = Tween(begin: -1.0, end: 0.0)
         .animate(CurvedAnimation(parent: animationController, curve: Curves.fastOutSlowIn));
 
     titleAnimation = Tween(begin: -1.0, end: 0.0)
-        .animate(CurvedAnimation(parent: animationController, curve: Interval(0.5, 1.0, curve: Curves.fastOutSlowIn)));
+        .animate(CurvedAnimation(parent: animationController, curve: const Interval(0.5, 1.0, curve: Curves.fastOutSlowIn)));
 
     postAnimation = Tween(begin: -1.0, end: 0.0)
-        .animate(CurvedAnimation(parent: animationController, curve: Interval(0.8, 1.0, curve: Curves.fastOutSlowIn)));
+        .animate(CurvedAnimation(parent: animationController, curve: const Interval(0.8, 1.0, curve: Curves.fastOutSlowIn)));
 
     animationController.forward();
 
@@ -47,7 +47,7 @@ class _BlogDetailState extends State<BlogDetail> with SingleTickerProviderStateM
         builder: (BuildContext context, Widget? child) {
           return Scaffold(
             appBar: AppBar(
-              title: Text('Blog Detail'),
+              title: const Text('Blog Detail'),
               backgroundColor: Colors.grey,
               centerTitle: true,
             ),
@@ -59,13 +59,13 @@ class _BlogDetailState extends State<BlogDetail> with SingleTickerProviderStateM
                       transform: Matrix4.translationValues(
                           imageAnimation.value * width, 0.0, 0.0),
                       child: Container(
-                        padding: EdgeInsets.only(left: 10.0),
+                        padding: const EdgeInsets.only(left: 10.0),
                         height: MediaQuery
                             .of(context)
                             .size
                             .height * 0.4,
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
+                        decoration: const BoxDecoration(
+                            image: const DecorationImage(
                                 image: AssetImage('assets/blog-image.jpg'),
                                 fit: BoxFit.cover
                             )
@@ -80,7 +80,7 @@ class _BlogDetailState extends State<BlogDetail> with SingleTickerProviderStateM
                             .of(context)
                             .size
                             .height * 0.4,
-                        padding: EdgeInsets.all(40.0),
+                        padding: const EdgeInsets.all(40.0),
                         width: MediaQuery
                             .of(context)
                             .size
@@ -88,7 +88,7 @@ class _BlogDetailState extends State<BlogDetail> with SingleTickerProviderStateM
                         decoration: BoxDecoration(
                             color: Colors.blueGrey.withOpacity(0.5)
                         ),
-                        child: Center(
+                        child: const Center(
                           child: Text('Lorem Ipsum Dolor', style: TextStyle(
                               fontSize: 40,
                               color: Colors.white,
@@ -106,9 +106,9 @@ class _BlogDetailState extends State<BlogDetail> with SingleTickerProviderStateM
                         .of(context)
                         .size
                         .width,
-                    padding: EdgeInsets.all(40.0),
+                    padding: const EdgeInsets.all(40.0),
 
-                    child: Text(
+                    child: const Text(
                       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. '
                           'Duis gravida efficitur nisl, vel ultrices augue pretium id. '
                           'Duis sit amet magna et justo condimentum tincidunt. '
